@@ -78,7 +78,7 @@ img { max-width: 100%; display: block; }
 .nav-links a:hover { color: var(--sage-dark); }
 
 .resume-btn {
-  background: var(--ink);
+  background: var(--sage-dark);
   color: var(--cream);
   text-decoration: none;
   padding: 12px 24px;
@@ -88,7 +88,7 @@ img { max-width: 100%; display: block; }
   transition: background 0.2s;
 }
 
-.resume-btn:hover { background: var(--sage-dark); }
+.resume-btn:hover { background: var(--ink); }
 
 .hero {
   display: flex;
@@ -383,6 +383,13 @@ img { max-width: 100%; display: block; }
   color: var(--ink);
   font-weight: 600;
   font-size: 14px;
+  overflow: hidden;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-card h3 { padding: 20px 20px 0; font-size: 18px; }
@@ -409,49 +416,66 @@ img { max-width: 100%; display: block; }
   box-shadow: 0 20px 60px rgba(46, 42, 34, 0.12);
 }
 
+.contact-card h2 { text-align: center; }
+
 .contact-wrap {
   display: flex;
   flex-direction: column;
-  gap: 28px;
   max-width: 640px;
   margin: 32px auto 0;
 }
 
 .contact-info {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  width: 75%;
+  margin: 0 auto 12px;
 }
 
-.social-row { display: flex; gap: 12px; }
-
-.social-icon {
+.social-row {
   display: flex;
+  gap: 12px;
+  width: 75%;
+  margin: 0 auto 28px;
+}
+
+.social-pill {
+  display: flex;
+  flex: 1;
+  min-width: 0;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: var(--cream);
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--sage-dark);
   border: 1px solid rgba(46, 42, 34, 0.12);
-  color: var(--ink);
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 
-.social-icon svg { width: 18px; height: 18px; }
-
-.social-icon:hover {
-  background: var(--sage-dark);
-  color: var(--cream);
+.social-pill svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
+
+.social-pill span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.social-pill:hover { background: var(--ink); }
 
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .sr-only {
@@ -483,8 +507,8 @@ img { max-width: 100%; display: block; }
 }
 
 .contact-form button {
-  margin-top: 18px;
-  background: var(--ink);
+  margin-top: 4px;
+  background: var(--sage-dark);
   color: var(--cream);
   border: none;
   padding: 14px 24px;
@@ -495,7 +519,7 @@ img { max-width: 100%; display: block; }
   transition: background 0.2s;
 }
 
-.contact-form button:hover { background: var(--sage-dark); }
+.contact-form button:hover { background: var(--ink); }
 
 .form-note {
   margin-top: 12px;
@@ -508,7 +532,6 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 860px) {
   .hero-text h1 { font-size: 40px; }
-  .contact-info { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 700px) {
@@ -520,6 +543,14 @@ img { max-width: 100%; display: block; }
   .stat { border-right: none; padding-right: 0; }
   .hero-card { padding: 0 20px 32px; }
   .contact-card { padding: 28px 20px; }
+  .contact-info, .social-row, .contact-form { width: 100%; }
+  .social-pill { padding: 8px; gap: 4px; }
+  .social-pill svg { width: 14px; height: 14px; }
+}
+
+@media (max-width: 340px) {
+  .social-pill { padding: 6px; gap: 3px; }
+  .social-pill svg { width: 12px; height: 12px; }
 }
 
 @media (max-width: 600px) {
