@@ -1,3 +1,3 @@
 <H1>Portfolio</H1>
 
-Personal site at palaksethi.com
+Personal site at [palaksethi.com](palaksethi.com)
